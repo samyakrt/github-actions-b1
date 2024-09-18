@@ -21,6 +21,14 @@ jobs:
       - name: test
         run: npm run test
 
+      - name: build
+        run: npm run build
+
+      - name: artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: dist
+
   deploy:
     needs: test
     runs-on: ubuntu-latest
